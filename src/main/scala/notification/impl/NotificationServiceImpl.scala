@@ -7,7 +7,7 @@ import notification.utils.mail.MailUtil
 
 import scala.concurrent.Future
 
-class NotificationServiceImpl(mailService: MailUtil) extends NotificationService
+class NotificationServiceImpl(mailUtil: MailUtil) extends NotificationService
 {
     private val EMAIL_SUBJECT = ""
 
@@ -20,7 +20,7 @@ class NotificationServiceImpl(mailService: MailUtil) extends NotificationService
             }
             else
             {
-                mailService.send(trigger.content, EMAIL_SUBJECT, email)
+                mailUtil.send(trigger.content, EMAIL_SUBJECT, email)
             }
 
             Future.successful(NotUsed)
