@@ -12,10 +12,9 @@ class NotificationServiceImpl(mailUtil: MailUtil) extends NotificationService
 {
     private val EMAIL_SUBJECT = ""
 
-    override def notifyTrigger: ServiceCall[Trigger, NotUsed] = ServiceCall
+    override def notifyByTrigger: ServiceCall[Trigger, NotUsed] = ServiceCall
     {
-        trigger =>
-        {
+        trigger => {
             if(trigger.isLogged)
             {
                 // TODO generate popup

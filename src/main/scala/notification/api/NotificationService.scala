@@ -8,12 +8,12 @@ import notification.model.Trigger
 
 trait NotificationService extends Service
 {
-    def notifyTrigger: ServiceCall[Trigger, NotUsed]
+    def notifyByTrigger: ServiceCall[Trigger, NotUsed]
 
     override def descriptor: Descriptor =
     {
       import Service._
-        named("notificationService").withCalls(namedCall("notify", notifyTrigger))
+        named("notificationService").withCalls(namedCall("notify", notifyByTrigger))
           .withAutoAcl(true)
     }
 }
