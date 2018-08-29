@@ -7,7 +7,6 @@ import play.api.Logger
 class MailUtil
 {
     private val EMAIL_FROM = ""
-    private val log = Logger("MailServiceLogger")
 
     def send(content: String, subject: String, receiver: String)
     {
@@ -27,8 +26,8 @@ class MailUtil
         catch
         {
             case ex: MessagingException =>
-                log.info("Error something wrong during sending email")
-                log.info(ex.getMessage)
+                Logger.error("Error something wrong during sending email")
+                Logger.error(ex.getMessage)
         }
     }
 }
