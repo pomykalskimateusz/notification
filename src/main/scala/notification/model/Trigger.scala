@@ -1,3 +1,3 @@
 package notification.model
 
-case class Trigger(isLogged: Boolean, content: String)
+case class Trigger(isLogged: Boolean, email: String, content: String)
